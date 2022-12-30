@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>userId</th>
+                <th>id</th>
+                <th>title</th>
+                <th>body</th>
+            </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+
+        </table>
+    </div>
+</body>
+<script>
+    $()
+    $.ajax({
+        url:'http://jsonplaceholder.typicode.com/posts',
+        type:'POST',
+        data:{
+            "userId": 1,
+            "title": "i am good boy",
+            "body": "gopi krishna"
+        },
+        success: function (data) {
+            //for(let data of datas){
+            var tr=`<tr>
+                    <td>${data.userId}</td>
+                    <td>${data.id}</id>
+                    <td>${data.title}</td>
+                    <td>${data.body}</td>
+                    </tr>
+                    `;
+                $("#tb").append(tr);
+
+                
+        },
+        error: function (data) {
+            console.log(data);
+        }
+    });
+</script>
+</html>

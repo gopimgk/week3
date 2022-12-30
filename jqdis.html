@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload=function(){
+        var urlstr=(window.location.href);
+        var url=new URL(urlstr);
+        var name=url.searchParams.get('name');
+        var age=url.searchParams.get('age');
+        var email=url.searchParams.get('email');
+        var city=url.searchParams.get('city');
+        console.log(name);
+        console.log(age);
+        console.log(email);
+        console.log(city);
+    }
+</script>
+</html>
